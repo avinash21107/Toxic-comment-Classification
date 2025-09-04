@@ -1,1 +1,127 @@
+Overview
+This project is a comparative study between traditional LSTM models and a hybrid LSTM + CNN architecture for toxic comment classification.
+With the rise of social media platforms (e.g., X, Instagram, Threads), online discussions have become more frequent—but also prone to toxic and harmful comments. This project aims to automatically detect and classify toxic comments to support healthier digital communities.
+
+🚀 Features
+
+Implements Long Short-Term Memory (LSTM) networks for sequence modeling.
+
+Explores a hybrid model (LSTM + CNN) to capture both long-term dependencies and local patterns.
+
+Uses Word2Vec embeddings for transfer learning.
+
+Includes advanced text preprocessing techniques:
+
+Normalization
+
+Lemmatization
+
+Stopword removal
+
+Tokenization
+
+Evaluates models using accuracy, precision, recall, F1 score, and AUC score.
+
+ Dtaset
+
+The project uses the Jigsaw Toxic Comment Classification dataset from Wikipedia discussions.
+It contains six toxicity categories:
+
+Toxic
+
+Severe Toxic
+
+Obscene
+
+Threat
+
+Insult
+
+Identity Hate
+
+Class Distribution (Training Set):
+
+Class	Frequency
+Toxic	15,154
+Severe Toxic	1,482
+Obscene	8,399
+Threat	425
+Insult	7,657
+Identity Hate	1,405
+Normal	150,346
+⚙️ Preprocessing
+
+Text Normalization – lowercasing, removing punctuation & extra spaces.
+
+Lemmatization – converting words to base forms (e.g., “running” → “run”).
+
+Stopword Removal – removing common words with little meaning.
+
+Tokenization – converting text into sequences of integers for deep learning.
+
+ Models Implemented
+
+LSTM Model: Handles long-term dependencies in text.
+
+CNN Model: Captures local features and n-grams.
+
+Hybrid LSTM + CNN: Combines sequence learning and local pattern detection for improved performance.
+
+Results
+Model	Accuracy	Precision	Recall	F1 Score	AUC
+LSTM + CNN	95.12%	94.25%	95.89%	96.89%	94.60%
+LSTM	94.36%	92.37%	93.01%	92.49%	92.96%
+CNN	92.48%	89.50%	90.22%	91.87%	89.41%
+
+Key Finding:
+The hybrid LSTM + CNN model outperformed traditional LSTM and CNN models, achieving the highest accuracy (95.12%).
+
+Dependencies
+
+Python 3.8+
+
+TensorFlow / Keras
+
+NumPy
+
+Pandas
+
+Scikit-learn
+
+NLTK / Spacy
+
+Install requirements:
+
+pip install -r requirements.txt
+
+Usage
+
+Clone this repository:
+
+git clone https://github.com/your-username/toxic-comment-classification.git
+cd toxic-comment-classification
+
+
+Preprocess the dataset:
+
+python preprocess.py
+
+
+Train models:
+
+python train.py --model lstm
+python train.py --model hybrid
+
+
+Evaluate results:
+
+python evaluate.py
+
+References
+
+Jigsaw Toxic Comment Classification dataset.
+
+[Hochreiter & Schmidhuber, 1997] Long Short-Term Memory.
+
+Multiple recent works on CNN, LSTM, and hybrid models for toxic comment classification
 
